@@ -1,7 +1,5 @@
-export default function Home() {
-	return (
-		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-			<h1>Layout</h1>
-		</main>
-	)
+import Home from './Home'
+
+export default function HomePage() {
+	return <Home />
 }
