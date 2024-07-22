@@ -30,13 +30,15 @@ const Dashboard: FC = () => {
 	return (
 		<div className='px-6'>
 			<div className={styles.wrapper}>
-				<Heading className={styles.heading}>Привет, {user.name}</Heading>
+				<Heading className={styles.heading}>
+					Привет, {user.name}
+				</Heading>
 				<div className={styles.avatar}>
 					<Image
 						src={user.avatarPath}
 						alt={user.name}
-						width={180}
-						height={180}
+						width={250}
+						height={250}
 						className='rounded-md'
 					/>
 				</div>
