@@ -1,15 +1,48 @@
 .subscribe {
-	@apply w-full rounded-lg bg-gray-800 p-4;
+	@apply w-full rounded-lg bg-gray-800 p-4 flex justify-center items-center flex-col relative overflow-hidden;
 
-	> h2 {
-		@apply font-semibold mb-2;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 250%;
+		height: 200%;
+		background: linear-gradient(#00ccff, #c708b7, #020a53, #002d8d);
+		box-shadow: 0 0 20px rgb(8, 8, 8);
+		animation: animate 10s linear infinite;
+		z-index: 0; // Установить z-index ниже текста
 	}
 
-	> p {
-		@apply text-sm text-neutral-300 mb-3;
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 1px;
+		background-color: #100f12;
+		border-radius: 7px;
+		z-index: 1; // Установить z-index ниже текста, но выше ::before
 	}
 
-	.button {
-		@apply w-full;
+	> .text {
+		position: relative;
+		z-index: 2; // Установить z-index выше, чем у ::before и ::after
+		> h2 {
+			@apply font-semibold mb-2;
+		}
+
+		> p {
+			@apply text-sm text-neutral-300 mb-3;
+		}
+
+		.button {
+			@apply w-full;
+		}
+	}
+}
+
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

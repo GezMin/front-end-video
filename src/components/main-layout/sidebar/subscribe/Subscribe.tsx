@@ -21,27 +21,31 @@ const Subscribe: FC = () => {
 	return (
 		!isAdminPage && (
 			<div className={styles.subscribe}>
-				<h2>
-					{user?.isHasPremium
-						? 'У вас уже есть премиум'
-						: 'Премиум подписка'}
-				</h2>
-				<p>
-					{user?.isHasPremium
-						? 'Вы уже имеете неограниченный доступ ко всем фильмам.'
-						: 'С премиум-подпиской у вас неограниченный доступ ко всем фильмам.'}
-				</p>
-				<Link
-					href={
-						user?.isHasPremium
-							? PUBLIC_URL.explorer()
-							: PUBLIC_URL.premium()
-					}
-				>
-					<Button size='sm' className={styles.button}>
-						{user?.isHasPremium ? 'Смотреть фильмы' : 'Оформить подписку'}
-					</Button>
-				</Link>
+				<div className={styles.text}>
+					<h2>
+						{user?.isHasPremium
+							? 'У вас уже есть премиум'
+							: 'Премиум подписка'}
+					</h2>
+					<p>
+						{user?.isHasPremium
+							? 'Вы уже имеете неограниченный доступ ко всем фильмам.'
+							: 'С премиум-подпиской у вас неограниченный доступ ко всем фильмам.'}
+					</p>
+					<Link
+						href={
+							user?.isHasPremium
+								? PUBLIC_URL.explorer()
+								: PUBLIC_URL.premium()
+						}
+					>
+						<Button size='sm' className={styles.button}>
+							{user?.isHasPremium
+								? 'Смотреть фильмы'
+								: 'Оформить подписку'}
+						</Button>
+					</Link>
+				</div>
 			</div>
 		)
 	)
