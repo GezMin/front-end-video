@@ -27,7 +27,9 @@ const Select: FC<ISelect> = ({
 	const getValue = () => {
 		if (field.value) {
 			return isMulti
-				? options.filter(option => field.value.indexOf(option.value) >= 0)
+				? options.filter(
+						option => field.value.indexOf(option.value) >= 0
+					)
 				: options.find(option => option.value === field.value)
 		} else {
 			return isMulti ? [] : ''
