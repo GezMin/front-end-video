@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: 'website',
 		siteName: SITE_NAME,
-		emails: ['info@sl-box.ru']
+		emails: ['info@cinemahub.com']
 	}
 }
 
@@ -36,6 +36,7 @@ export default function RootLayout({
 		>
 			<body>
 				<Providers>{children}</Providers>
+				<div id='modal'></div>
 			</body>
 		</html>
 	)
